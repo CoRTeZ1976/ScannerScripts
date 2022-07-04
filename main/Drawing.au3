@@ -9,9 +9,12 @@ Func Drawing($drawingNumb, $KKS, $date, $InvNo)
 	WinWait('ТММ-3.'&$drawingNumb&' СБ.tif')
 	RotateCut($drawingNumb)
 	
-	#comments-start
-	DrawingNumFrameSearch($drawingNumb)
 	
+	DrawingNumFrameSearch($drawingNumb)
+	Send("{r 2}")
+	DrawingNumFrameSearch($drawingNumb, 1220, 1000, 1245)
+	
+	#comments-start
 	;Длинный код ККС
 	KKSFrameSearch($KKS)
 	

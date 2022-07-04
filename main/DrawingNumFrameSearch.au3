@@ -9,10 +9,20 @@
 	If Not @error Then
 		MouseMove($insideTopLeft[0] + 2, $insideTopLeft[1] + 1, 5)
 		MouseDown("left")
-		MouseMove($insideTopRight[0] - 1, $insideLeftBottom[1] - 1, 5)
+		MouseMove($insideTopRight[0] + 1, $insideLeftBottom[1] - 1, 5)
 		MouseUp("left")
 		
 		Send("^x")
+		
+		MouseMove($insideTopLeft[0] - 40, $insideTopLeft[1] + 10, 5)
+		Sleep(300)
+		MouseClick("left")
+		
+		MouseMove($insideTopLeft[0] + 2, $insideTopLeft[1] + 10, 5)
+		MouseDown("left")
+		MouseMove($insideTopRight[0] + 1, $insideLeftBottom[1] - 1, 5)
+		MouseUp("left")
+		
 		Send("^t")
 		WinWaitActive("Нанесение текста на изображение", "")
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
