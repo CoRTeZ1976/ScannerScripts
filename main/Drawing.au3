@@ -4,46 +4,21 @@
 #include <KKSFrameSearch.au3>
 #include <DrawingNumFrameSearch.au3>
 
-Func Drawing($drawingNumb, $KKS, $date, $InvNo)	
+Func Drawing($CurrDraw, $CurrKKS, $date, $CurrInvNo)	
 
-	WinWait('ТММ-3.'&$drawingNumb&' СБ.tif')
-	RotateCut($drawingNumb)
+	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
+	RotateCut($CurrDraw)
 	
 	
-	DrawingNumFrameSearch($drawingNumb)
+	DrawingNumFrameSearch($CurrDraw)
 	Send("{r 2}")
-	DrawingNumFrameSearch($drawingNumb, 1220, 1000, 1245)
+	DrawingNumFrameSearch($CurrDraw, 1220, 1000, 1245)
+	Send("{r 2}")
+	
+	;Длинный код ККС
+	KKSFrameSearch($CurrKKS)
 	
 	#comments-start
-	;Длинный код ККС
-	KKSFrameSearch($KKS)
-	
-	
-	
-	;№ чертежа
-	MouseMove(1000, 865, 5)
-	MouseDown("left")
-	MouseMove(1200, 900)
-	MouseUp("left")
-	Send("^x")
-	Send("^t")
-	WinWaitActive("Нанесение текста на изображение", "")
-	ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
-	Send("{DOWN 9}")
-	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
-	Send("{r 2}")
-	Sleep(200)
-	MouseMove(1017, 996, 1)
-	MouseDown("left")
-	MouseMove(1230, 1030)
-	MouseUp("left")
-	Send("^t")
-	WinWaitActive("Нанесение текста на изображение", "")
-	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
-	Send("{r 2}")
-	Sleep(200)
-	
-	
 	;дата в штампе
 	MouseMove(570, 800, 1)
 	MouseDown("left")
@@ -57,7 +32,7 @@ Func Drawing($drawingNumb, $KKS, $date, $InvNo)
 	;Инвентарный №
 	;Дата(подпись)
 	Send("{r}")
-	InvFrameSearch($date, $InvNo)
+	InvFrameSearch($date, $CurrInvNo)
 	Send("{l}")
 	#comments-end
 EndFunc
