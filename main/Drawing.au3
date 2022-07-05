@@ -3,35 +3,69 @@
 #include <InvFrameSearch.au3>
 #include <KKSFrameSearch.au3>
 #include <DrawingNumFrameSearch.au3>
+#include <FormatDetector.au3>
 
-Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $date)	
+Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)	
 
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
-	RotateCut($CurrDraw)
-	
-	;№ Чертежа
-	DrawingNumFrameSearch($CurrDraw)
-	Send("{r 2}")
-	DrawingNumFrameSearch($CurrDraw, 1220, 1000, 1245)
-	Send("{r 2}")
-	
-	;Длинный код ККС
-	KKSFrameSearch($CurrKKS)
+	$format = FormatDetector($CurrDraw)
+	If $format == "1654" Then
+		RotateCut($CurrDraw)
 		
-	;дата в штампе
-	MouseMove(570, 800, 1)
-	MouseDown("left")
-	MouseMove(940, 1076, 5)
-	MouseUp("left")
-	MouseMove(800, 900, 1)
-	MouseClick("left")
-	MouseWheel("down", 10)
-	DateFrameSearch($date)
-	
-	;Инвентарный №
-	;Дата(подпись)
-	Send("{r}")
-	InvFrameSearch($date, $CurrInvNo)
-	Send("{l}")
+		;№ Чертежа
+		DrawingNumFrameSearch($CurrDraw)
+		Send("{r 2}")
+		DrawingNumFrameSearch($CurrDraw, 1220, 1000, 1245)
+		Send("{r 2}")
+		#comments-start
+		;Длинный код ККС
+		KKSFrameSearch($CurrKKS)
+			
+		;дата в штампе
+		MouseMove(570, 800, 1)
+		MouseDown("left")
+		MouseMove(940, 1076, 5)
+		MouseUp("left")
+		MouseMove(800, 900, 1)
+		MouseClick("left")
+		MouseWheel("down", 10)
+		DateFrameSearch($CurrDate)
+		
+		;Инвентарный №
+		;Дата(подпись)
+		Send("{r}")
+		InvFrameSearch($CurrDate, $CurrInvNo)
+		Send("{l}")
+		#comments-end
+	ElseIf $format == "3310" Then
+		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
+		
+		;№ Чертежа
+		DrawingNumFrameSearch($CurrDraw, 1630, 870, 1610)
+		Send("{r 2}")
+		DrawingNumFrameSearch($CurrDraw, 1560, 995, 1580)
+		#comments-start
+		Send("{r 2}")
+		
+		;Длинный код ККС
+		KKSFrameSearch($CurrKKS)
+			
+		;дата в штампе
+		MouseMove(570, 800, 1)
+		MouseDown("left")
+		MouseMove(940, 1076, 5)
+		MouseUp("left")
+		MouseMove(800, 900, 1)
+		MouseClick("left")
+		MouseWheel("down", 10)
+		DateFrameSearch($CurrDate)
+		
+		;Инвентарный №
+		;Дата(подпись)
+		Send("{r}")
+		InvFrameSearch($CurrDate, $CurrInvNo)
+		Send("{l}")
+		#comments-end
+	EndIf
 	
 EndFunc

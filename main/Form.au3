@@ -4,6 +4,7 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 #include <Refactor.au3>
+#include <Array.au3>
 
 #Region ### START Koda GUI section ### Form=C:\Users\aa_shchendrygin\Desktop\dwgTemplate\SciTE4AutoIt3_Portable\test\main\GODMODE.kxf
 $GODMODE = GUICreate("GODMODE", 360, 254, -1, -1)
@@ -31,14 +32,16 @@ GUISetState(@SW_SHOW)
 While 1
 	$nMsg = GUIGetMsg() 
 	Switch $nMsg 
-		Case $OK
-			$FirstDrawing = GUICtrlRead($FirstDraw)
-			$LastDrawing = GUICtrlRead($LastDraw)
-			$firstKKS = GUICtrlRead($KKS)
-			$FirstInvNo = GUICtrlRead($InvNo)
-			$date = GUICtrlRead($date)
+		Case $OK	
+			Dim $props[5];
+			$props[0] = GUICtrlRead($FirstDraw)
+			$props[1] = GUICtrlRead($LastDraw)
+			$props[2] = GUICtrlRead($KKS)
+			$props[3] = GUICtrlRead($InvNo)
+			$props[4] = GUICtrlRead($date)
 			GUISetState(@SW_HIDE)
-			Refactor($FirstDrawing, $LastDrawing, $firstKKS, $FirstInvNo, $date)
+			;_ArrayDisplay($props)
+			Refactor($props)
 			Exit
 		Case $Cancel
 			Exit
@@ -46,3 +49,4 @@ While 1
 			Exit
 	EndSwitch
 WEnd
+
