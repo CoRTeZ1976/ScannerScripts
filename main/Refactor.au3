@@ -1,32 +1,35 @@
 ﻿#include <Drawing.au3>
 #include <NextDraw.au3>
+
+#include <Save.au3>
 #comments-start
 #include <TT_RUS.au3>
 #include <TT_ENG.au3>
 #include <Specif_RUS.au3>
 #include <Specif_ENG.au3>
-#include <Save.au3>
+
 
 #comments-end
 
 Func KKSCount($CurrKKS)
-	$count = Number(StringRight($KKS, 3))
+	$count = Number(StringRight($CurrKKS, 3))
 	;MsgBox (0, "", $count)
 	$count += 1
 	;MsgBox (0, "", $count)
-	$start = StringLen($KKS)
-	Return StringReplace($KKS, $start - 2, $count)
+	$start = StringLen($CurrKKS)
+	Return StringReplace($CurrKKS, $start - 2, $count)
 EndFunc
 
-Func Refactor($FirstDrawing, $LastDrawing, $KKS, $InvNo, $date)
+Func Refactor($FirstDrawing, $LastDrawing, $KKS , $InvNo, $date)
 	$count = $LastDrawing - $FirstDrawing
 	$CurrDraw = $FirstDrawing
 	$CurrInvNo = $InvNo
 	$CurrKKS = $KKS
 	For $i = 0 to $count Step 1
-		MsgBox(0, "", $CurrDraw &", "& $CurrKKS &", " & $InvNo)
+		;MsgBox(0, "", $CurrDraw &", "& $CurrKKS &", " & $InvNo)
 		WinActivate('ТММ-3.'&$CurrDraw&' СБ.tif ')
-		Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $date)
+		
+		;Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $date)
 		;Save()
 		;PageDown()
 		;TT_RUS($CurrDraw, $CurrKKS, $CurrInvNo, $date)
@@ -50,3 +53,4 @@ Func Refactor($FirstDrawing, $LastDrawing, $KKS, $InvNo, $date)
 	Exit
 EndFunc
 
+;Refactor(38548, 38549, "R249.KK56.50UJA.KLB50.TM.KC.WD.105", 1, 1)

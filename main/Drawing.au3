@@ -4,12 +4,12 @@
 #include <KKSFrameSearch.au3>
 #include <DrawingNumFrameSearch.au3>
 
-Func Drawing($CurrDraw, $CurrKKS, $date, $CurrInvNo)	
+Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $date)	
 
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 	RotateCut($CurrDraw)
 	
-	
+	;№ Чертежа
 	DrawingNumFrameSearch($CurrDraw)
 	Send("{r 2}")
 	DrawingNumFrameSearch($CurrDraw, 1220, 1000, 1245)
@@ -17,8 +17,7 @@ Func Drawing($CurrDraw, $CurrKKS, $date, $CurrInvNo)
 	
 	;Длинный код ККС
 	KKSFrameSearch($CurrKKS)
-	
-	#comments-start
+		
 	;дата в штампе
 	MouseMove(570, 800, 1)
 	MouseDown("left")
@@ -34,5 +33,5 @@ Func Drawing($CurrDraw, $CurrKKS, $date, $CurrInvNo)
 	Send("{r}")
 	InvFrameSearch($date, $CurrInvNo)
 	Send("{l}")
-	#comments-end
+	
 EndFunc

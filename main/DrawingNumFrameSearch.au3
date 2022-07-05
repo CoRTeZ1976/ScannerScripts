@@ -28,10 +28,10 @@
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
 		Send("{DOWN 9}")
 		MouseClick("left", 1000, 450, 10)
-		Sleep(50)
-		Send("+{HOME}")
-		Sleep(50)
-		Send($drawingNumb)
+		Send("{HOME}")
+		Send("+{END}")
+		Send("{DELETE}")
+		Send("ТММ-3."&$drawingNumb&" СБ")
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 
 	Else

@@ -17,7 +17,9 @@
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
 		Send("{DOWN 10}")
 		MouseClick("left", 1000, 450, 10)
-		Send("^a")
+		Send("{END}")
+		Send("+{HOME}")
+		Send("{DELETE}")
 		Send($KKS)
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 	Else
