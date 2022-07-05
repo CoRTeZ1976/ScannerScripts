@@ -1,6 +1,6 @@
 ﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X1 = 1290, $Y = 865, $X2 = 1250)
 	Sleep(300)
-	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000)
+	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 50)
 	MsgBox(0, $outsideXY[0], $outsideXY[1])
 	$insideX = PixelSearch($outsideXY[0], $outsideXY[1], $outsideXY[0] - 9, $outsideXY[1], 0xFFFFFF, 50)
 	MsgBox(0, $insideX[0], $insideX[1])
@@ -17,11 +17,11 @@
 		
 		Send("^x")
 		
-		MouseMove($insideTopLeft[0] - 40, $insideTopLeft[1] + 10, 5)
+		MouseMove($insideTopLeft[0] - 40, $insideTopLeft[1] + 5, 5)
 		Sleep(300)
 		MouseClick("left")
 		
-		MouseMove($insideTopLeft[0] + 2, $insideTopLeft[1] + 10, 5)
+		MouseMove($insideTopLeft[0] + 2, $insideTopLeft[1] + 5, 5)
 		MouseDown("left")
 		MouseMove($insideTopRight[0] + 1, $insideLeftBottom[1] - 1, 5)
 		MouseUp("left")
@@ -42,4 +42,4 @@
 	EndIf
 EndFunc
 
-DrawingNumFrameSearch(123, 1580, 995, 1560)
+;DrawingNumFrameSearch(123, 1580, 995, 1560)

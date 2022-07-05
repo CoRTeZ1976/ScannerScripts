@@ -39,12 +39,12 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		#comments-end
 	ElseIf $format == "3310" Then
 		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
-		
+		#comments-start
 		;№ Чертежа
 		DrawingNumFrameSearch($CurrDraw, 1630, 870, 1610)
 		Send("{r 2}")
 		DrawingNumFrameSearch($CurrDraw, 1560, 995, 1580)
-		#comments-start
+		
 		Send("{r 2}")
 		
 		;Длинный код ККС
