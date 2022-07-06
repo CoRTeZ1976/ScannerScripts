@@ -31,7 +31,7 @@ GUISetState(@SW_SHOW)
     
 While 1
 	$nMsg = GUIGetMsg() 
-	Switch $nMsg 
+	Switch $nMsg
 		Case $OK	
 			Dim $props[5];
 			$props[0] = GUICtrlRead($FirstDraw)

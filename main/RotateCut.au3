@@ -34,3 +34,4 @@ Func RotateCut($drawingNumb, $X11 = 622, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X
 		MsgBox(0, "Ошибка!", "Неудалось определить координаты")
 	EndIf
 EndFunc
+

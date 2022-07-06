@@ -1,12 +1,12 @@
 ﻿Func KKSFrameSearch($KKS = 123, $X1 = 880, $Y = 830, $X2 = 910)
 	sleep(300)
-	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000)
+	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 100)
 	$insideX = PixelSearch($outsideXY[0], $outsideXY[1], $outsideXY[0] + 9, $outsideXY[1], 0xFFFFFF, 50)
 	$insideTopLeft = PixelSearch($insideX[0], $insideX[1] , $insideX[0], $insideX[1] - 30, 0x000000, 50)
 	$insideTopRight = PixelSearch($insideTopLeft[0], $insideTopLeft[1] +1 , $insideTopLeft[0] + 400, $insideTopLeft[1] - 1, 0x000000, 50)
-	
+
 	If Not @error Then
-		
+
 		MouseMove($insideTopLeft[0], $insideTopLeft[1] + 2, 5)
 		MouseDown("left")
 		MouseMove($insideTopRight[0] , $insideTopRight[1] + 30, 5)
@@ -27,4 +27,4 @@
 	EndIf
 EndFunc
 
-;KKSFrameSearch()
+;KKSFrameSearch(123, 1220, 830, 1250)

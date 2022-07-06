@@ -6,7 +6,6 @@
 #include <FormatDetector.au3>
 
 Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)	
-
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 	$format = FormatDetector($CurrDraw)
 	If $format == "1654" Then
@@ -46,10 +45,12 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		DrawingNumFrameSearch($CurrDraw, 1560, 995, 1580)
 		
 		Send("{r 2}")
+		#comments-end
+		
 		
 		;Длинный код ККС
-		KKSFrameSearch($CurrKKS)
-			
+		KKSFrameSearch($CurrKKS, 1220, 830, 1250)
+		#comments-start	
 		;дата в штампе
 		MouseMove(570, 800, 1)
 		MouseDown("left")

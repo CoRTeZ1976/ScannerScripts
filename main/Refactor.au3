@@ -53,5 +53,3 @@ Func Refactor($props)
 	Next
 	Exit
 EndFunc
-
-;Refactor(38548, 38549, "R249.KK56.50UJA.KLB50.TM.KC.WD.105", 1, 1)
