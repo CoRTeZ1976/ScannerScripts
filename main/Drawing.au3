@@ -18,8 +18,8 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Send("{r 2}")
 		
 		;Длинный код ККС
-		KKSFrameSearch($CurrKKS)
-			#comments-start
+		;KKSFrameSearch($CurrKKS)
+			
 		;дата в штампе
 		MouseMove(570, 800, 1)
 		MouseDown("left")
@@ -28,6 +28,7 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		MouseMove(800, 900, 1)
 		MouseClick("left")
 		MouseWheel("down", 10)
+		#comments-start
 		DateFrameSearch($CurrDate)
 		
 		;Инвентарный №
@@ -49,7 +50,7 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		
 		
 		;Длинный код ККС
-		KKSFrameSearch($CurrKKS, 1220, 830, 1250)
+		;KKSFrameSearch($CurrKKS, 1220, 830, 1250)
 		#comments-start	
 		;дата в штампе
 		MouseMove(570, 800, 1)
