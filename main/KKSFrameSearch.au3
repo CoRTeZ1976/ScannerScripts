@@ -1,7 +1,6 @@
 ﻿Func KKSFrameSearch($KKS = 123, $X = 640, $Y = 1715, $W = 890, $H = 65)
 	sleep(300)
 	WinWaitActive("ТММ", "")
-	;MsgBox(0, "", "123")
 	Send("+c")
 	WinWaitActive("Создание пользовательского выделения", "")
 	Send("{TAB 3}")

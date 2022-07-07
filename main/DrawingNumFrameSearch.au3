@@ -2,7 +2,6 @@
 	Sleep(300)
 	
 	WinWaitActive("ТММ", "")
-	;MsgBox(0, "", "123")
 	Send("+c")
 	WinWaitActive("Создание пользовательского выделения", "")
 	Send("{TAB 3}")
