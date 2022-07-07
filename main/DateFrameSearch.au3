@@ -1,4 +1,4 @@
-﻿Func DateFrameSearch($date = "0", $X = 563, $Y = 1978, $W = 70, $H = 69)
+﻿Func DateFrameSearch($date = "0", $X = 571, $Y = 1981, $W = 70, $H = 69)
 	sleep(300)
 	
 	WinWaitActive("ТММ", "")

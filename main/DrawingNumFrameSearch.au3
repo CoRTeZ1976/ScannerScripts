@@ -1,4 +1,4 @@
-﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X = 640, $Y = 1790, $W = 890, $H = 102)
+﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X = 650, $Y = 1790, $W = 890, $H = 102)
 	Sleep(300)
 	
 	WinWaitActive("ТММ", "")

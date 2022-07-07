@@ -1,4 +1,4 @@
-﻿Func KKSFrameSearch($KKS = 123, $X = 640, $Y = 1715, $W = 890, $H = 65)
+﻿Func KKSFrameSearch($KKS = 123, $X = 650, $Y = 1715, $W = 890, $H = 65)
 	sleep(300)
 	WinWaitActive("ТММ", "")
 	Send("+c")
