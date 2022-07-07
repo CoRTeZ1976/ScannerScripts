@@ -33,7 +33,7 @@ While 1
 	$nMsg = GUIGetMsg() 
 	Switch $nMsg
 		Case $OK	
-			Dim $props[5];
+			Dim $props[5]
 			$props[0] = GUICtrlRead($FirstDraw)
 			$props[1] = GUICtrlRead($LastDraw)
 			$props[2] = GUICtrlRead($KKS)
