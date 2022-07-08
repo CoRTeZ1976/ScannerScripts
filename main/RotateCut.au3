@@ -27,7 +27,7 @@ Func RotateCut($drawingNumb, $X11 = 622, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X
 		$coord4  = PixelSearch($X21, $Y21, $X22, $Y22, 0x000000, 100)
 		MouseMove($coord1[0] - 1, $coord1[1] - 1)
 		MouseDown("left")
-		MouseMove($coord4[0] + 1, $coord4[1] + 1)
+		MouseMove($coord4[0] - 3, $coord4[1] - 8)
 		MouseUp("left")
 		Send("^y")
 	Else
