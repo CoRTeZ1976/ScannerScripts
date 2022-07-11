@@ -27,8 +27,8 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 
 		;дата в штампе
 		DateFrameSearch($CurrDate)
-		DateFrameSearch($CurrDate, 571, 2055, 70, 69)
-		DateFrameSearch($CurrDate, 571, 2131, 70, 69)
+		DateFrameSearch($CurrDate, 571, 2055, 70)
+		DateFrameSearch($CurrDate, 571, 2131, 70)
 
 		;Инвентарный №
 		;Дата(подпись)

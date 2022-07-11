@@ -1,4 +1,4 @@
-﻿Func DateFrameSearch($date = "0", $X = 571, $Y = 1981, $W = 70, $H = 69)
+﻿Func DateFrameSearch($date = "0", $X1 = 571, $Y = 1981, $X2 = 70)
 	sleep(300)
 	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 150)
 	$insideX = PixelSearch($outsideXY[0], $outsideXY[1], $outsideXY[0] + 9, $outsideXY[1], 0xFFFFFF, 150)
