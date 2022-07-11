@@ -1,22 +1,24 @@
-﻿Func DateFrameSearch($date = "0", $X = 571, $Y = 1981, $W = 70, $H = 69)
+﻿Func DateFrameSearch($date = "0", $X1 = 1050, $Y = 865, $X2 = 1020)
 	sleep(300)
 	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 150)
-	$insideX = PixelSearch($outsideXY[0], $outsideXY[1], $outsideXY[0] + 9, $outsideXY[1], 0xFFFFFF, 150)
-	$insideTopLeft = PixelSearch($insideX[0] + 1, $insideX[1] - 30, $insideX[0], $insideX[1], 0x000000, 150)
-	$insideRightXY = PixelSearch($insideX[0], $insideX[1], $insideX[0] + 200, $insideX[1], 0x000000, 150)
-	$insideBottomRightXY = PixelSearch($insideRightXY[0] - 1, $insideRightXY[1] + 50, $insideRightXY[0] - 1, $insideRightXY[1] + 200, 0x000000, 150)
+	$insideX = PixelSearch($outsideXY[0] - 9, $outsideXY[1], $outsideXY[0], $outsideXY[1], 0xFFFFFF, 150)
+	$insideTopRight = PixelSearch($insideX[0] + 1, $insideX[1] - 30, $insideX[0], $insideX[1], 0x000000, 50)
+	;MsgBox(0, $insideTopRight[0], $insideTopRight[1])
 
 	If Not @error Then
-			;#comments-start
-		MouseMove($insideTopLeft[0], $insideTopLeft[1] - 13, 5)
+		;#comments-start
+		MouseMove($insideTopRight[0] - 110, $insideTopRight[1] + 5, 5)
 		MouseDown("left")
-		MouseMove($insideBottomRightXY[0], $insideBottomRightXY[1], 5)
+		MouseMove($insideTopRight[0], $insideTopRight[1] + 120, 5)
 		MouseUp("left")
+
 		Send("^x")
-		MouseClick("left", $insideTopLeft[0] - 20, $insideTopLeft[1] + 20)
-		MouseMove($insideTopLeft[0], $insideTopLeft[1] + 20, 5)
+
+		MouseClick("left", $insideTopRight[0] - 130, $insideTopRight[1] + 30)
+
+		MouseMove($insideTopRight[0] - 110, $insideTopRight[1] + 30, 5)
 		MouseDown("left")
-		MouseMove($insideBottomRightXY[0], $insideBottomRightXY[1], 5)
+		MouseMove($insideTopRight[0], $insideTopRight[1] + 120, 5)
 		MouseUp("left")
 
 		Send("^t")
@@ -29,37 +31,46 @@
 		Send("{DELETE}")
 		Send($date)
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
+
 		;#comments-end
 		;#comments-start
-		MouseMove($insideTopLeft[0], $insideTopLeft[1] - 135, 5)
+		MouseMove($insideTopRight[0] - 110, $insideTopRight[1] - 115, 5)
 		MouseDown("left")
-		MouseMove($insideTopLeft[0] + 113, $insideTopLeft[1] - 20, 5)
+		MouseMove($insideTopRight[0], $insideTopRight[1] - 1, 5)
 		MouseUp("left")
+
 		Send("^x")
-		MouseClick("left", $insideTopLeft[0] - 20, $insideTopLeft[1] - 102)
-		MouseMove($insideTopLeft[0], $insideTopLeft[1] - 102, 5)
+		MouseClick("left", $insideTopRight[0] - 130, $insideTopRight[1] - 95)
+
+		MouseMove($insideTopRight[0] - 110, $insideTopRight[1] - 95, 5)
 		MouseDown("left")
-		MouseMove($insideBottomRightXY[0], $insideBottomRightXY[1] - 122, 5)
+		MouseMove($insideTopRight[0], $insideTopRight[1] - 1, 5)
 		MouseUp("left")
 
 		Send("^t")
 		WinWaitActive("Нанесение текста на изображение", "")
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
+
 		;#comments-end
-		MouseMove($insideTopLeft[0], $insideTopLeft[1] - 247, 5)
+		MouseMove($insideTopRight[0] - 110, $insideTopRight[1] - 235, 5)
 		MouseDown("left")
-		MouseMove($insideTopLeft[0] + 114, $insideTopLeft[1] - 140, 5)
+		MouseMove($insideTopRight[0], $insideTopRight[1] - 125, 5)
 		MouseUp("left")
+
 		Send("^x")
-		MouseClick("left", $insideTopLeft[0] - 20, $insideTopLeft[1] - 230)
-		MouseMove($insideTopLeft[0], $insideTopLeft[1] - 230, 5)
+
+		MouseClick("left", $insideTopRight[0] - 130, $insideTopRight[1] - 220)
+
+		MouseMove($insideTopRight[0] - 110, $insideTopRight[1] - 220, 5)
 		MouseDown("left")
-		MouseMove($insideTopLeft[0] + 114, $insideTopLeft[1] - 140, 5)
+		MouseMove($insideTopRight[0], $insideTopRight[1] - 125, 5)
 		MouseUp("left")
+
 		;#comments-start
 		Send("^t")
 		WinWaitActive("Нанесение текста на изображение", "")
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
+
 		;#comments-end
 	Else
 		MsgBox(0, "Ошибка!", "Неудалось определить координаты")
