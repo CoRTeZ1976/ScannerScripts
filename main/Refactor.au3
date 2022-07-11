@@ -46,11 +46,7 @@ Func Refactor($props)
 		$CurrDraw += 1
 		$CurrKKS = KKSCount($CurrKKS)
 		$CurrInvNo += 1
-<<<<<<< HEAD
 		;Sleep(20)
-=======
-		Sleep(200)
->>>>>>> 45a4b4e78145e7c6c63e8a453f784ba4bd911bdf
 		If $i <> $count Then
 			NextDraw()
 		EndIf
