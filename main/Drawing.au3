@@ -22,28 +22,27 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		DrawingNumFrameSearch($CurrDraw, 1245, 1000, 1220, 215, 40)
 		Send("{r 2}")
 
-		Sleep(50)
-		MouseMove(570, 800, 1)
-		MouseDown("left")
-		MouseMove(940, 1076, 5)
-		MouseUp("left")
-		MouseMove(800, 900, 1)
-		MouseClick("left")
-		MouseWheel("down", 10)
+;~ 		Sleep(50)
+;~ 		MouseMove(570, 800, 1)
+;~ 		MouseDown("left")
+;~ 		MouseMove(940, 1076, 5)
+;~ 		MouseUp("left")
+;~ 		MouseMove(800, 900, 1)
+;~ 		MouseClick("left")
+;~ 		MouseWheel("down", 10)
 
-		;дата в штампе
-		DateFrameSearch($CurrDate)
+;~ 		;дата в штампе
+;~ 		DateFrameSearch($CurrDate)
 ;~ 		DateFrameSearch($CurrDate, 571, 2055, 70)
 ;~ 		DateFrameSearch($CurrDate, 571, 2131, 70)
-#comments-start
+
 		;Инвентарный №
 		;Дата(подпись)
 		Send("{r}")
 		InvFrameSearch($CurrDate, $CurrInvNo)
-
 		Send("{l}")
 
-		#comments-end
+
 	ElseIf $format == "3310" Then
 		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
 

@@ -2,14 +2,14 @@
 #include <NextDraw.au3>
 #include <Save.au3>
 #include <Array.au3>
-#comments-start
+#include <NextPage.au3>
 #include <TT_RUS.au3>
-#include <TT_ENG.au3>
-#include <Specif_RUS.au3>
-#include <Specif_ENG.au3>
+;~ #include <TT_ENG.au3>
+;~ #include <Specif_RUS.au3>
+;~ #include <Specif_ENG.au3>
 
 
-#comments-end
+
 
 Func KKSCount($CurrKKS)
 	$count = Number(StringRight($CurrKKS, 3))
@@ -29,17 +29,17 @@ Func Refactor($props)
 	For $i = 0 to $count Step 1
 		;MsgBox(0, "", $CurrDraw &", "& $CurrKKS &", " & $InvNo)
 		WinActivate('ТММ-3.'&$CurrDraw&' СБ.tif ')
-		Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
+		;Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Save()
-		;PageDown()
-		;TT_RUS($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
+		NextPage()
+		TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
 		;Save()
-		;PageDown()
+		;NextPage()
 		;TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Save()
-		;PageDown()
+		;NextPage()
 		;Specif_RUS($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
-		;PageDown()
+		;NextPage()
 		;Save()
 		;Specif_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Save()
