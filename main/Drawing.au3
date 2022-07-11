@@ -5,7 +5,7 @@
 #include <DrawingNumFrameSearch.au3>
 #include <FormatDetector.au3>
 
-Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)	
+Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 	$format = FormatDetector($CurrDraw)
 	If $format == "1654" Then
@@ -13,59 +13,48 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		RotateCut($CurrDraw)
 		;Длинный код ККС
 		KKSFrameSearch($CurrKKS)
-		
-		
+
+
 		;№ Чертежа
 		DrawingNumFrameSearch($CurrDraw)
 		Send("{r 2}")
-<<<<<<< HEAD
-		DrawingNumFrameSearch($CurrDraw, 1220, 1000, 1245, 210, 42)
-		Send("{r 2}")
-		;#comments-end
-		
-=======
+
 		DrawingNumFrameSearch($CurrDraw, 910, 2102, 509, 88)
 		Send("{r 2}")
-		
+
 		;Длинный код ККС
 		KKSFrameSearch($CurrKKS)
->>>>>>> 45a4b4e78145e7c6c63e8a453f784ba4bd911bdf
-		
+
 		;дата в штампе
 		DateFrameSearch($CurrDate)
-<<<<<<< HEAD
-		#comments-start	
-=======
 		DateFrameSearch($CurrDate, 571, 2055, 70, 69)
 		DateFrameSearch($CurrDate, 571, 2131, 70, 69)
-		
-		
->>>>>>> 45a4b4e78145e7c6c63e8a453f784ba4bd911bdf
+
 		;Инвентарный №
 		;Дата(подпись)
 		Send("{r}")
 		InvFrameSearch($CurrDate, $CurrInvNo)
-		
+
 		Send("{l}")
 	#comments-start
 		#comments-end
 	ElseIf $format == "3310" Then
 		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
-		
+
 		;№ Чертежа
 		DrawingNumFrameSearch($CurrDraw, 1630, 870, 1610)
 		Send("{r 2}")
 		DrawingNumFrameSearch($CurrDraw, 1560, 995, 1580)
-		
+
 		Send("{r 2}")
-				
+
 		;Длинный код ККС
 		KKSFrameSearch($CurrKKS, 1220, 830, 1250)
 		#comments-start
-		
+
 		;дата в штампе
 		DateFrameSearch($CurrDate)
-		
+
 		;Инвентарный №
 		;Дата(подпись)
 		Send("{r}")
@@ -73,5 +62,5 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		Send("{l}")
 		#comments-end
 	EndIf
-	
+
 EndFunc
