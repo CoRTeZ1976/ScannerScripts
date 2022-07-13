@@ -9,7 +9,7 @@ Func TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 	;№ чертежа
 	DrawingNumFrameSearch($CurrDraw, 1287, 890, 1250, 370, 60)
 	Send("{r 2}")
-	DrawingNumFrameSearch($CurrDraw, 1240, 1000, 1220, 215, 40)
+	DrawingNumFrameSearch($CurrDraw, 1239, 1000, 1220, 215, 40)
 	Send("{r 2}")
 
 	;ТТ

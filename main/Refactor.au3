@@ -29,7 +29,7 @@ Func Refactor($props)
 	For $i = 0 to $count Step 1
 		;MsgBox(0, "", $CurrDraw &", "& $CurrKKS &", " & $InvNo)
 		WinActivate('ТММ-3.'&$CurrDraw&' СБ.tif ')
-		;Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
+		Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Save()
 		NextPage()
 		;Send("{PGDN}")
