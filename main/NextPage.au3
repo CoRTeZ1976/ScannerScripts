@@ -1,4 +1,4 @@
 ﻿Func NextPage()
-	Send("PGDWN")
+	Send("{PGDN}")
 EndFunc
 

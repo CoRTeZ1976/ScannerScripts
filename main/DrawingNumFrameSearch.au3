@@ -1,10 +1,11 @@
-﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X1 = 1290, $Y = 865, $X2 = 1250, $X3 = 370, $Y3 = 44)
+﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X1 = 1288, $Y = 865, $X2 = 1250, $X3 = 370, $Y3 = 44)
 	Sleep(300)
 	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 10)
-
+;~ 	MsgBox(0, $outsideXY[0], $outsideXY[1])
 	$insideX = PixelSearch($outsideXY[0], $outsideXY[1], $outsideXY[0] - 9, $outsideXY[1], 0xFFFFFF)
-
+;~ 	MsgBox(0, $insideX[0], $insideX[1])
 	$insideTopRight = PixelSearch($insideX[0] - 1, $insideX[1] , $insideX[0] - 1, $insideX[1] - 30, 0x000000, 50)
+;~ 	MsgBox(0, $insideTopRight[0], $insideTopRight[1])
 
 	If Not @error Then
 		MouseMove($insideTopRight[0] - 10, $insideTopRight[1] + 6, 10)
@@ -31,4 +32,4 @@
 	EndIf
 EndFunc
 
-;DrawingNumFrameSearch(123, 1245, 1000, 1220, 215, 40)
+;DrawingNumFrameSearch()
