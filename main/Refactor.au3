@@ -4,7 +4,7 @@
 #include <Array.au3>
 #include <NextPage.au3>
 #include <TT_RUS.au3>
-;~ #include <TT_ENG.au3>
+#include <TT_ENG.au3>
 ;~ #include <Specif_RUS.au3>
 ;~ #include <Specif_ENG.au3>
 
@@ -35,8 +35,8 @@ Func Refactor($props)
 		;Send("{PGDN}")
 		TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
 		;Save()
-		;NextPage()
-		;TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
+		NextPage()
+		TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Save()
 		;NextPage()
 		;Specif_RUS($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)

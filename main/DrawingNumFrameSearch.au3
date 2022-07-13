@@ -14,10 +14,20 @@
 		MouseUp("left")
 
 		Send("^x")
+
+		If $Y == 890 Then
+			MouseMove($insideTopRight[0] - $X3 - 50, $insideTopRight[1] + 15, 10)
+			MouseClick("left")
+			MouseMove($insideTopRight[0] - $X3, $insideTopRight[1] + 15, 10)
+			MouseDown("left")
+			MouseMove($insideTopRight[0] - 10, $insideTopRight[1] + $Y3, 10)
+			MouseUp("left")
+		EndIf
+
 		Send("^t")
 		WinWaitActive("Нанесение текста на изображение", "")
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
-		Send("{DOWN 10}")
+		Send("{DOWN 11}")
 		MouseClick("left", 1000, 450, 10)
 		Send("{HOME}")
 		Send("+{END}")
@@ -32,4 +42,4 @@
 	EndIf
 EndFunc
 
-;DrawingNumFrameSearch()
+;~ DrawingNumFrameSearch(132, 1287, 890, 1250, 370, 60)

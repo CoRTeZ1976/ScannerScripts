@@ -1,10 +1,13 @@
-Func TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
-
+Func TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 	RotateCut($CurrDraw)
+
+	;Длинный код ККС
+	KKSFrameSearch($CurrKKS, 1290, 865, 1260)
+
 	;№ чертежа
-	DrawingNumFrameSearch($CurrDraw)
+	DrawingNumFrameSearch($CurrDraw, 1287, 890, 1250, 370, 60)
 	Send("{r 2}")
 	DrawingNumFrameSearch($CurrDraw, 1240, 1000, 1220, 215, 40)
 	Send("{r 2}")
@@ -18,7 +21,7 @@ Func TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
 	Send("^t")
 	WinWaitActive("Нанесение текста на изображение", "")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
-	Send("{DOWN 6}")
+	Send("{DOWN 5}")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 
 
@@ -28,5 +31,3 @@ Func TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
 	Send("{l}")
 
 EndFunc
-
-;TT_RUS(38548, 123, "01")
