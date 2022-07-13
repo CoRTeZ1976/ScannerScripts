@@ -28,11 +28,11 @@ $date = GUICtrlCreateInput("", 200, 166, 129, 21)
 $Label2 = GUICtrlCreateLabel("Дата:", 5, 170, 130, 12)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
-    
+
 While 1
-	$nMsg = GUIGetMsg() 
+	$nMsg = GUIGetMsg()
 	Switch $nMsg
-		Case $OK	
+		Case $OK
 			Dim $props[5]
 			$props[0] = GUICtrlRead($FirstDraw)
 			$props[1] = GUICtrlRead($LastDraw)

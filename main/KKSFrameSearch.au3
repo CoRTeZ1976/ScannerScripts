@@ -31,4 +31,4 @@
 
 EndFunc
 
-;KKSFrameSearch()
+;KKSFrameSearch(123, 1290, 865, 1260)
