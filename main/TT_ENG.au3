@@ -4,7 +4,7 @@ Func TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 	RotateCut($CurrDraw)
 
 	;Длинный код ККС
-	KKSFrameSearch($CurrKKS, 1290, 865, 1260)
+	KKSFrameSearch($CurrDraw, $CurrKKS, 1290, 865, 1260)
 
 	;№ чертежа
 	DrawingNumFrameSearch($CurrDraw, 1287, 890, 1250, 370, 60)
@@ -24,10 +24,11 @@ Func TT_ENG($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 	Send("{DOWN 5}")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 
-
 	;Инвентарный №
 	Send("{r}")
-	InvFrameSearch($CurrDate, $CurrInvNo)
+	InvFrameSearch($CurrDraw, $CurrDate, $CurrInvNo)
 	Send("{l}")
 
 EndFunc
+
+;TT_ENG(38552, "df23sd1f3sdf", 321321, 3212)

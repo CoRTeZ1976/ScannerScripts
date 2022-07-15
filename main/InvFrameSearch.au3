@@ -1,4 +1,4 @@
-﻿Func InvFrameSearch($date = "0", $InvNo = 0, $X1 = 280, $Y = 155, $X2 = 320)
+﻿Func InvFrameSearch($CurrDraw, $date = "0", $InvNo = 0, $X1 = 280, $Y = 155, $X2 = 320)
 	sleep(300)
 	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000)
 	$insideX = PixelSearch($outsideXY[0], $outsideXY[1], $outsideXY[0] + 9, $outsideXY[1], 0xFFFFFF, 50)
@@ -39,7 +39,7 @@
 		Send($date)
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 	Else
-		MsgBox(0, "Ошибка!", "Неудалось определить координаты")
+		writeLog($CurrDraw, "инв. № и даты")
 	EndIf
 EndFunc
 

@@ -1,4 +1,4 @@
-﻿Func KKSFrameSearch($KKS = 123, $X1 = 1290, $Y = 830, $X2 = 1260)
+﻿Func KKSFrameSearch($CurrDraw, $KKS = 123, $X1 = 1290, $Y = 830, $X2 = 1260)
 	sleep(300)
 	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 150)
 
@@ -26,7 +26,7 @@
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 
 	Else
-		MsgBox(0, "Ошибка!", "Неудалось определить координаты")
+		writeLog($CurrDraw, "кода KKS")
 	EndIf
 
 EndFunc

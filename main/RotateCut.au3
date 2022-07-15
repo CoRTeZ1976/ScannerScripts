@@ -1,4 +1,4 @@
-Func RotateCut($drawingNumb, $X11 = 622, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X21 = 1295, $Y21 = 1045, $X22 = 1275, $Y22 = 1020, $X = 41, $Y = 50, $W = 1584, $H = 2244)
+Func RotateCut($CurrDraw, $X11 = 622, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X21 = 1295, $Y21 = 1045, $X22 = 1275, $Y22 = 1020, $X = 41, $Y = 50, $W = 1584, $H = 2244)
 	WinWaitActive("ТММ", "")
 	;WinWait('ТММ-3.'&$drawingNumb&' СБ.tif')
 	$coord1  = PixelSearch($X11, $Y11, $X12, $Y12, 0x000000, 100)
@@ -23,7 +23,7 @@ Func RotateCut($drawingNumb, $X11 = 622, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X
 			Send("{ENTER}")
 		EndIf
 
-		WinWait('ТММ-3.'&$drawingNumb&' СБ.tif')
+		WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 		$coord1  = PixelSearch($X11 - 2, $Y11, $X12, $Y12, 0x000000, 100)
 		$coord2  = PixelSearch($X21, $Y11, $X22, $Y12, 0x000000, 100)
 		$coord3  = PixelSearch($X11 -2 , $Y21, $X12 + 10, $Y22, 0x000000, 100)
@@ -34,7 +34,7 @@ Func RotateCut($drawingNumb, $X11 = 622, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X
 		MouseUp("left")
 		Send("^y")
 	Else
-		MsgBox(0, "Ошибка!", "Неудалось определить координаты")
+		writeLog($CurrDraw, "внешней рамки")
 	EndIf
 EndFunc
 

@@ -1,14 +1,16 @@
-Func writeLog($text)
-	$file = FileOpen("c:\Users\aa_shchendrygin\Desktop\dwgTemplate\SciTE4AutoIt3_Portable\test\main\log.txt", 1)
+#include <File.au3>
+
+Func writeLog($drawingNumb, $location)
+	$file = FileOpen("log.txt", 1)
 
 	If $file = -1 Then
 		MsgBox(0, "Error", "Unable to open file.")
 		Exit
 	EndIf
-	MsgBox(0, "", $file)
-	FileWriteLine($file, $text & @CRLF)
+
+	FileWriteLine($file, 'Не удалось определить координаты '&$location&' в файле ТММ-3.'&$drawingNumb&' СБ')
 
 	FileClose($file)
 EndFunc
 
-;writeLog("asdads")
+;~ writeLog(132, "№ чертежа")
