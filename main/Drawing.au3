@@ -9,16 +9,12 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 	$format = FormatDetector($CurrDraw)
 	If $format == "1654" Then
-		;#comments-start
 		RotateCut($CurrDraw)
 		;Длинный код ККС
-		KKSFrameSearch($CurrKKS)
-
-
+		KKSFrameSearch($CurrDraw, $CurrKKS)
 		;№ Чертежа
 		DrawingNumFrameSearch($CurrDraw)
 		Send("{r 2}")
-
 		DrawingNumFrameSearch($CurrDraw, 1245, 1000, 1220, 215, 40)
 		Send("{r 2}")
 
@@ -30,7 +26,6 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 ;~ 		MouseMove(800, 900, 1)
 ;~ 		MouseClick("left")
 ;~ 		MouseWheel("down", 10)
-
 ;~ 		;дата в штампе
 ;~ 		DateFrameSearch($CurrDate)
 ;~ 		DateFrameSearch($CurrDate, 571, 2055, 70)
@@ -39,10 +34,8 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;Инвентарный №
 		;Дата(подпись)
 		Send("{r}")
-		InvFrameSearch($CurrDate, $CurrInvNo)
+		InvFrameSearch($CurrDraw, $CurrDate, $CurrInvNo)
 		Send("{l}")
-
-
 	ElseIf $format == "3310" Then
 		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
 

@@ -1,6 +1,5 @@
 Func TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
 
-
 	WinWait('ТММ-3.'&$CurrDraw&' СБ.tif')
 	RotateCut($CurrDraw)
 	;№ чертежа
@@ -21,10 +20,9 @@ Func TT_RUS($CurrDraw, $CurrInvNo, $CurrDate)
 	Send("{DOWN 6}")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 
-
 	;Инвентарный №
 	Send("{r}")
-	InvFrameSearch($CurrDate, $CurrInvNo)
+	InvFrameSearch($CurrDraw, $CurrDate, $CurrInvNo)
 	Send("{l}")
 
 EndFunc

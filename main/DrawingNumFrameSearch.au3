@@ -1,5 +1,6 @@
 ﻿#include <writeLog.au3>
-Func DrawingNumFrameSearch($drawingNumb = 123, $X1 = 1288, $Y = 865, $X2 = 1250, $X3 = 370, $Y3 = 44)
+#include <File.au3>
+Func DrawingNumFrameSearch($CurrDraw = 123, $X1 = 1288, $Y = 865, $X2 = 1250, $X3 = 370, $Y3 = 44)
 	Sleep(300)
 	$outsideXY = PixelSearch($X1, $Y, $X2, $Y, 0x000000, 10)
 ;~ 	MsgBox(0, $outsideXY[0], $outsideXY[1])
@@ -33,14 +34,14 @@ Func DrawingNumFrameSearch($drawingNumb = 123, $X1 = 1288, $Y = 865, $X2 = 1250,
 		Send("{HOME}")
 		Send("+{END}")
 		Send("{DELETE}")
-		Send("ТММ-3."&$drawingNumb&" СБ")
+		Send("ТММ-3."&$CurrDraw&" СБ")
 		ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
 		#comments-start
 		#comments-end
 	Else
-		writeLog("Не удалось определить координаты №чертежа в файле ТММ-3."&$drawingNumb&" СБ")
-		MsgBox(0, "Error", @error)
+		writeLog($CurrDraw, "№ чертежа")
 	EndIf
+
 EndFunc
 
-DrawingNumFrameSearch(132, 1239, 1000, 1220, 215, 40)
+;DrawingNumFrameSearch(132, 1239, 1000, 1220, 215, 40)
