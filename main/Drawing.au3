@@ -15,7 +15,7 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		;№ Чертежа
 		DrawingNumFrameSearch($CurrDraw)
 		Send("{r 2}")
-		DrawingNumFrameSearch($CurrDraw, 1245, 1000, 1220, 215, 40)
+		DrawingNumFrameSearch($CurrDraw, 1243, 1000, 1220, 215, 40)
 		Send("{r 2}")
 
 ;~ 		Sleep(50)
@@ -37,17 +37,17 @@ Func Drawing($CurrDraw, $CurrKKS, $CurrInvNo, $CurrDate)
 		InvFrameSearch($CurrDraw, $CurrDate, $CurrInvNo)
 		Send("{l}")
 	ElseIf $format == "3310" Then
-		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
+;~ 		RotateCut($CurrDraw, 280, 90, 310, 110, 1625, 1040, 1605, 1020)
 
-		;№ Чертежа
-		DrawingNumFrameSearch($CurrDraw, 1630, 870, 1610)
-		Send("{r 2}")
-		DrawingNumFrameSearch($CurrDraw, 1560, 995, 1580)
+;~ 		;№ Чертежа
+;~ 		DrawingNumFrameSearch($CurrDraw, 1630, 870, 1610)
+;~ 		Send("{r 2}")
+;~ 		DrawingNumFrameSearch($CurrDraw, 1560, 995, 1580)
 
-		Send("{r 2}")
+;~ 		Send("{r 2}")
 
-		;Длинный код ККС
-		KKSFrameSearch($CurrKKS, 1220, 830, 1250)
+;~ 		;Длинный код ККС
+;~ 		KKSFrameSearch($CurrKKS, 1220, 830, 1250)
 		#comments-start
 
 		;дата в штампе
