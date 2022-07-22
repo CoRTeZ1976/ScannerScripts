@@ -2,14 +2,10 @@
 #include <NextDraw.au3>
 #include <Save.au3>
 #include <Array.au3>
-#comments-start
-#include <TT_RUS.au3>
-#include <TT_ENG.au3>
-#include <Specif_RUS.au3>
-#include <Specif_ENG.au3>
-
-
-#comments-end
+;~ #include <TT_RUS.au3>
+;~ #include <TT_ENG.au3>
+;~ #include <Specif_RUS.au3>
+;~ #include <Specif_ENG.au3>
 
 Func KKSCount($CurrKKS)
 	$count = Number(StringRight($CurrKKS, 3))

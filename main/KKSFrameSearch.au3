@@ -1,4 +1,4 @@
-﻿Func KKSFrameSearch($KKS = 123, $X = 650, $Y = 1715, $W = 890, $H = 65)
+﻿Func KKSFrameSearch($KKS = 123, $X = 660, $Y = 1725, $W = 870, $H = 55)
 	sleep(300)
 	WinWaitActive("ТММ", "")
 	Send("+c")
@@ -16,14 +16,14 @@
 	Send("^t")
 	WinWaitActive("Нанесение текста на изображение", "")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
-	Send("{DOWN 10}")
+	Send("{DOWN 12}")
 	MouseClick("left", 1000, 450, 10)
 	Send("{END}")
 	Send("+{HOME}")
 	Send("{DELETE}")
 	Send($KKS)
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
-	
+
 EndFunc
 
-;KKSFrameSearch()
+;~ KKSFrameSearch()

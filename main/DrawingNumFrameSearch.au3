@@ -1,6 +1,6 @@
-﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X = 650, $Y = 1790, $W = 890, $H = 102)
+﻿Func DrawingNumFrameSearch($drawingNumb = 123, $X = 680, $Y = 1810, $W = 830, $H = 85)
 	Sleep(300)
-	
+
 	WinWaitActive("ТММ", "")
 	Send("+c")
 	WinWaitActive("Создание пользовательского выделения", "")
@@ -17,14 +17,14 @@
 	Send("^t")
 	WinWaitActive("Нанесение текста на изображение", "")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
-	Send("{DOWN 9}")
+	Send("{DOWN 11}")
 	MouseClick("left", 1000, 450, 10)
 	Send("{END}")
 	Send("+{HOME}")
 	Send("{DELETE}")
 	Send('ТММ-3.'&$drawingNumb&' СБ')
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
-	
+
 EndFunc
 
-;DrawingNumFrameSearch()
+;~ DrawingNumFrameSearch(132, 910, 2102, 509, 88)

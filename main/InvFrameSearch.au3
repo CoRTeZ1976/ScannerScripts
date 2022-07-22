@@ -1,6 +1,6 @@
-﻿Func InvFrameSearch($date = "0", $InvNo = 0, $X = 45, $Y = 105, $W = 180, $H = 44)
+﻿Func InvFrameSearch($date = "0", $InvNo = 0, $X = 55, $Y = 107, $W = 160, $H = 40)
 	sleep(300)
-	
+
 	WinWaitActive("ТММ", "")
 	Send("+c")
 	WinWaitActive("Создание пользовательского выделения", "")
@@ -14,7 +14,7 @@
 	Send($H)
 	Send("{ENTER}")
 	Send("^x")
-	
+
 	Send("^t")
 	WinWaitActive("Нанесение текста на изображение", "")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
@@ -25,7 +25,7 @@
 	Send("{DELETE}")
 	Send($InvNo)
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
-	
+
 	WinWaitActive("ТММ", "")
 	Send("+c")
 	WinWaitActive("Создание пользовательского выделения", "")
@@ -39,7 +39,7 @@
 	Send($H)
 	Send("{ENTER}")
 	Send("^x")
-	
+
 	Send("^t")
 	WinWaitActive("Нанесение текста на изображение", "")
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:ComboBox; TEXT:; INSTANCE:1]")
@@ -50,7 +50,7 @@
 	Send("{DELETE}")
 	Send($date)
 	ControlClick("Нанесение текста на изображение", "", "[CLASS:Button; TEXT:OK; INSTANCE:1]")
-	
+
 EndFunc
 
-;InvFrameSearch()
+;~ InvFrameSearch()
