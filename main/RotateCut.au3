@@ -30,7 +30,7 @@ Func RotateCut($drawingNumb, $X11 = 625, $Y11 = 100, $X12 = 640, $Y12 = 125,  $X
 		Send("{TAB}")
 		Send($H)
 		Send("{ENTER}")
-		Send("^y")
+;~ 		Send("^y")
 	Else
 		MsgBox(0, "Ошибка!", "Неудалось определить координаты")
 	EndIf
@@ -38,4 +38,4 @@ EndFunc
 
 
 
-;~ RotateCut(38548)
+;~ RotateCut(38554)
